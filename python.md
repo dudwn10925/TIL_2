@@ -4,6 +4,22 @@
 
 
 
+## Iterable 객체
+
+#### tuple
+
+: 수정 불가
+
+
+
+#### set
+
+intersection: 교집합 `&`
+
+union: 합집합 `|`
+
+
+
 ## 파이썬 스타일 코드
 
 #### list comprehension

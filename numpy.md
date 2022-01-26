@@ -4,17 +4,19 @@
 
 # NumPy
 
-: 빠른 수치 연산
-
 > import numpy as np
+
+: 빠른 수치 연산
 
 
 
 ## ndarray
 
+> np.array( )로 생성
+
 : N dimension array (다차원 배열)
 
-> np.array( )로 생성
+0차원: scalar, 1차원: vector, 2차원 이상: array
 
 
 
@@ -30,11 +32,20 @@ arr = np.arange(1, 13).reshape(4, 3)
 #	    [7, 8, 9],
 #	    [10, 11, 12]
 #	]
+
 arr[[0, 2], ]		# [[1, 2, 3], [7, 8, 9]]
 arr[0, 2]			# 3
 arr[1][2]			# 6
+arr[[0, 2], [0, 0]]	# [1, 7]
 arr[1:2, 2]			# [6]
 arr[1:2, [2]]		# [[6]]
+arr[3:][1:]			# [ ], ndim=2
+arr[3:, 1:]			# [[11, 12]]
+
+arr_idxing = arr[0, 0]
+arr_idxing = 100	# arr 변경 없음
+arr_slicing = arr[2:, 1:]
+arr_slicing[0, 0] = 100		# arr 변경됨
 ```
 
 indexing을 할수록 차원이 줄어든다 but `[ ]`로 indexing을 한다면 차원이 유지된다
@@ -61,9 +72,21 @@ indexing을 할수록 차원이 줄어든다 but `[ ]`로 indexing을 한다면 
 
     1: 열, 가로
 
+- add( ), subtract( ), multiply( ), divide( ), sqrt( )
+
 - empty( ), empty_like( ), ones( ), ones_like( ), zeros( ), zeros_like( ), full( )
+
 - identity( ), eye( )
+
 - arange( ), linspace( )
+
+- concatenate((a, b), axis=0)
+
+- tile(a, (x, y)): a를 하나의 요소로 보고 x행 y열로 맞추기
+
+- repeat(x, a): x객체를 a번 반복하여 1차원 배열로 반환
+
+- trim_zeros( ): 앞뒤의 0을 제거
 
 ```python
 # mean(): 산술 평균
@@ -99,6 +122,10 @@ size: 크기 반환
 ndim: 차원
 
 T: transpose, 전치행렬, 1차원은 불가
+
+ravel( ), flatten( ): 1차원 배열, np.ravel( )도 가능
+
+dot( ): 내적
 
 
 
