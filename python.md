@@ -372,3 +372,23 @@ import datetime
 datetime.datetime.now()		# 현 시각 추출
 ```
 
+
+
+## 리눅스 명령어 `!`
+
+```python
+# web site
+!wget -O '~' http:// ...
+fromCSVArray = np.genfromtxt('~', delimiter=',')		# ndarray로 반환
+
+# 엑셀 라이브러리 설치
+!pip install xlsxwriter
+
+# MYSQL Client Library 설치
+!pip install mysql-connector-python
+
+# ImportError: 엑셀 읽기 에러
+!pip install --upgrade xlrd
+```
+
+`'~'` 부분에 `.csv`로 하면 csv 파일로, `.txt`로 하면 txt 파일로 저장됨

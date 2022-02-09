@@ -136,14 +136,3 @@ dot( ): 내적
 `np.random.randint(a, b)`: a ~ b 사이의 정수형 난수
 
 `np.random.rand(x, y)`: x행 y열 배열에 실수형 난수 채우기
-
-
-
-#### !
-
-```python
-# web site
-!wget -O '~' http:// ...
-fromCSVArray = np.genfromtxt('~', delimiter=',')	# ndarray 객체로 반환
-```
-
