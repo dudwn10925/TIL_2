@@ -88,6 +88,12 @@ indexing을 할수록 차원이 줄어든다 but `[ ]`로 indexing을 한다면 
 
 - trim_zeros( ): 앞뒤의 0을 제거
 
+- cumsum(axis=0): 누적합
+
+- bincount( ): ndarray의 index 빈도수
+
+- c_[a, b]: a와 b를 column을 기준으로 배열
+
 ```python
 # mean(): 산술 평균
 np.mean(range(1, 11))
@@ -131,8 +137,14 @@ dot( ): 내적
 
 #### np.random
 
-`np.random.random( )`: 0 ~ 1 사이의 실수형 난수
+`np.random.seed()`: seed값 설정, 고정된 난수 생성 위함
+
+`np.random.random()`: 0 ~ 1 사이의 실수형 난수
 
 `np.random.randint(a, b)`: a ~ b 사이의 정수형 난수
 
-`np.random.rand(x, y)`: x행 y열 배열에 실수형 난수 채우기
+`np.random.rand(x, y)`: x행 y열 배열에 0 ~ 1 사이의 실수형 난수 채우기
+
+`np.random.randn(x, y)`: x행 y열 배열에 음수를 포함한 실수형 난수 채우기
+
+`np.random.uniform(a, b, x)`: a ~ b 사이의 실수형 난수 x개 추출

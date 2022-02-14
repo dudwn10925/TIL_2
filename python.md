@@ -6,6 +6,12 @@
 
 ## Iterable 객체
 
+#### list
+
+a.`extend`(b): a를 b로 확장
+
+
+
 #### tuple
 
 : 수정 불가
@@ -14,9 +20,29 @@
 
 #### set
 
+> 생성: set()
+
 intersection: 교집합 `&`
 
 union: 합집합 `|`
+
+
+
+#### string
+
+문자열은 immutable, 변경 불가능하다
+
+
+
+#### dictionary
+
+> 생성: {}
+
+key - value의 쌍
+
+`get(key, "None")`: key에 대응되는 value 값 출력, key가 존재하지 않다면 None을 출력
+
+
 
 
 
@@ -203,6 +229,15 @@ import mod2
 ```
 
 또는 TERMINAL창에 `set PYTHONPATH='C:\workspace\mod'` 입력 후 import mod2
+
+
+
+#### sys.stdin.readline
+
+```python
+import sys
+input = sys.stdin.readline
+```
 
 
 

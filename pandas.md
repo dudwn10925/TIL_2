@@ -10,12 +10,6 @@
 
 Series와 DataFrame 객체에 연산 가능
 
-`read_json()`: JSON 파일을 읽어 DataFrame 객체로 반환
-
-`read_csv()`: CSV파일을 읽어 DataFrame 객체로 반환
-
-`read_excel('~', skiprows=3)`: ' ~ '경로의 excel 파일에서 3줄을 skip하고 읽어옴
-
 
 
 ## Series
@@ -23,6 +17,10 @@ Series와 DataFrame 객체에 연산 가능
 > pd.Series([ ], index=[ ])
 
 : dictionary로 생성, dictionary와 다르게 객체에 연산이 가능, index를 지정하여도 숫자 indexing이 가능
+
+
+
+#### 속성
 
 index: 인덱스 반환
 
@@ -40,29 +38,58 @@ str: string value에 접근		ex) str.len( ), str.contains( )
 
 : Series의 모음
 
-index: 인덱스 반환
 
-columns: 칼럼 반환
 
-dtypes: 각 칼럼에 대한 data type 반환
+#### dataframe으로 읽기
 
-values: 요소 반환
+`read_json()`: JSON 파일을 읽어 DataFrame 객체로 반환
 
-info( ): 객체에 대한 대략적인 정보 반환
+`read_csv()`: CSV파일을 읽어 DataFrame 객체로 반환
 
-describe( ): 통계 자료 반환
+`read_excel('~', skiprows=3)`: ' ~ '경로의 excel 파일에서 3줄을 skip하고 읽어옴
 
-head( ), tail( ): 앞, 뒤 5행 반환
 
-isnull( ): 결측치 확인
 
-`sort_values('칼럼명', ascending=True)`: 칼럼을 기준으로 정렬, ascending은 오름차순
+#### 속성, 함수
 
-`set_index('칼럼명')`: 해당 칼럼으로 index 설정
+- index: 인덱스 반환
 
-count( ), sum( ), min( ), max( ): object 대상으로도 가능
+- columns: 칼럼 반환
 
-mean( ), median( ): 숫자형에만 가능
+- dtypes: 각 칼럼에 대한 data type 반환
+
+- values: 요소 반환
+
+- info( ): 객체에 대한 대략적인 정보 반환
+
+- describe( ): 통계 자료 반환
+
+- head( ), tail( ): 앞, 뒤 5행 반환
+
+- isnull( ): 결측치 확인
+
+- `sort_values('칼럼명', ascending=True, inplace=True)`: 칼럼을 기준으로 정렬, ascending은 오름차순
+
+- `set_index('칼럼명')`: 해당 칼럼으로 index 설정
+
+- count( ), sum( ), min( ), max( ): object 대상으로도 가능
+
+- mean( ), median( ): 숫자형에만 가능
+
+- `apply()`: 함수 적용
+
+- `groupby()`: split --> apply --> combine
+
+- unique( ): 속성의 고유값 추출
+
+```python
+# apply()
+df['Population'] *= 1000
+df['Population'].apply(lambda x: x*1000)
+
+# groupby()
+df.groupby('과목').mean()
+```
 
 
 
